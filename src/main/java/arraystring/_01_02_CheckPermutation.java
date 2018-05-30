@@ -1,7 +1,6 @@
 package arraystring;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Given two strings,write a method to decide if one is a permutation of the other.
