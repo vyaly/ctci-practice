@@ -7,7 +7,9 @@ package arraystring;
  */
 class _01_09_StringRotation {
     boolean rotated(String original, String result) {
-        throw new UnsupportedOperationException();
+        if(original.length() != result.length())  return false;
+        String s1s1 = original + original;
+            return  s1s1.contains(result);
     }
 
 }
