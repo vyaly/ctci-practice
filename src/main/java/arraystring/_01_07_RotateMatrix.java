@@ -6,7 +6,17 @@ package arraystring;
  */
 class _01_07_RotateMatrix {
     int[][] rotate(int[][] m) {
-        throw new UnsupportedOperationException();
+        int n = m.length;
+        for(int layer = 0; layer < n/2; layer++) {
+            for( int i = layer; i < n - layer; i++ ){
+                int last = n - layer;
+                int top = m[layer][i];
+//                top <- bottom
+                m[layer][i] = m[last][i];
+                m[last][i] = m[i][0];
+            }
+        }
+        return m;
     }
 
 

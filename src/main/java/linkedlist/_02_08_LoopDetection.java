@@ -14,6 +14,20 @@ package linkedlist;
 class _02_08_LoopDetection {
 
     LinkedListNode detect(LinkedListNode head) {
-        throw new UnsupportedOperationException();
+        LinkedListNode runner = head;
+        LinkedListNode walker = head;
+        while (runner != null && runner.next != null) {
+            runner = runner.next.next;
+            walker = walker.next;
+            if (runner == walker) break;
+        }
+        if (runner == null || runner.next == null) return null;
+
+        walker = head;
+        while (runner != walker) {
+            runner = runner.next;
+            walker = walker.next;
+        }
+        return runner;
     }
 }
